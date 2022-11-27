@@ -21,6 +21,7 @@ spec:
       - name: nextcloud-db-storage        
         persistentVolumeClaim:            # < linkname of the volume for the pvc
           claimName: nextcloud-db-pvc     # < pvc name we created in the previous yaml 
+          type: "DirectoryOrCreate"
      containers:
       - name: mariadb
         image: linuxserver/mariadb
