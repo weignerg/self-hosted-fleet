@@ -19,8 +19,8 @@ spec:
      terminationGracePeriodSeconds: 1800
      volumes:
       - name: nextcloud-db-storage        
-        persistentVolumeClaim:            # < linkname of the volume for the pvc
-          claimName: nextcloud-db-pvc     # < pvc name we created in the previous yaml 
+        hostPath:
+          path: /WHNAS/k3s-pv/nextcloud-db-pv
           type: "DirectoryOrCreate"
      containers:
       - name: mariadb
