@@ -11,5 +11,6 @@ spec:
     - ReadWriteMany         # < One pod can write to storage
   hostPath:
     path: /WHNAS/k3s-pv/nextcloud-server-pv
+    type: "DirectoryOrCreate"
   persistentVolumeReclaimPolicy: Retain # < the persistent volume can be reclaimed
   volumeMode: Filesystem
