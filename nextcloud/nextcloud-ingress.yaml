@@ -17,7 +17,7 @@ spec:
         pathType: Prefix  # pathType no longer has a default value in v1; "Exact", "Prefix", or "ImplementationSpecific" must be specified
         backend:
           service:
-            name: nextcloud-service   
+            name: nextcloud-service
             port:
               number: 443
   tls: # < placing a host in the TLS config will indicate a cert should be created
