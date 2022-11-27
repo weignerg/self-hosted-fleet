@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nextcloud-db-pvc  # < name of the persistent volume claim ("pvc")
+  namespace: nextcloud    # < namespace where to place the pvc
+spec:
+  volumeName: nextcloud-db-pv
+  accessModes:
+    - ReadWriteMany       # < One pod can write to storage. Same value as pv
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Gi        # < how much data can the pvc claim from pv

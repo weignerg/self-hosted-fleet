@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nextcloud-server-pv
+  namespace: nextcloud
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 1Ti            # < max. size we reserve for the pv
+  accessModes:
+    - ReadWriteMany         # < One pod can write to storage
+  hostPath:
+    path: /WHNAS/k3s-pv/nextcloud-server-pv
+  persistentVolumeReclaimPolicy: Retain # < the persistent volume can be reclaimed
+  volumeMode: Filesystem

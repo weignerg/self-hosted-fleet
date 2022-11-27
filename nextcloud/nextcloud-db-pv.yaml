@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nextcloud-db-pv     # < name of the persisant volume ("pv") in kubenetes
+  namespace: nextcloud      # < namespace where to place the pv
+spec:
+  accessModes:
+    - ReadWriteMany         # < One pod can write to storage
+  capacity:
+    storage: 1Gi            # < max. size we reserve for the pv
+  hostPath:
+    path: /WHNAS/k3s-pv/nextcloud-db-pv
+  persistentVolumeReclaimPolicy: Retain # < the persistent volume can be reclaimed
+  volumeMode: Filesystem
