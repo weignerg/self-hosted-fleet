@@ -9,7 +9,8 @@ spec:
   serviceName: nextcloud-db-service       # < name of the service   (see service yaml part)
   replicas: 1                             # < number of pods to deploy
   selector:
-    matchLabels: nextcloud-db-pod         # < pod-label for tagging and reference
+    matchLabels:
+      pod-label: nextcloud-db-pod         # < pod-label for tagging and reference
   template:
     metadata:
       labels:
