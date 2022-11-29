@@ -1,0 +1,28 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: istio-virtual-services
+spec:
+  hosts:
+  - '*'
+  gateways:
+  - istio-ingress/istio-ingressgateway
+  http:
+  - name: rancher
+    match:
+    - uri:
+        prefix: /rancher
+    rewrite:
+      uri: /
+    route:
+    - destination:
+        host: rancher.rancher.svc.cluster.local
+  - name: nextcloud
+    match:
+    - uri:
+        prefix: /nextcloud
+    rewrite:
+      uri: /
+    route:
+    - destination:
+        host: nextcloud-service.nextcloud.svc.cluster.local

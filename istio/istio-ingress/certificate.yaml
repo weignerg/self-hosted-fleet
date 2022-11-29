@@ -1,0 +1,10 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ingress-cert
+  namespace: istio-ingress
+spec:
+  secretName: ingress-cert
+  commonName: weigner-lucky-dogs.duckdns.org
+  dnsNames:
+  - weigner-lucky-dogs.duckdns.org
