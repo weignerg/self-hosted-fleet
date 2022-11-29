@@ -6,7 +6,7 @@ spec:
   hosts:
   - '*'
   gateways:
-  - istio-ingress/istio-ingressgateway
+  - istio-system/istio-ingressgateway
   http:
   - name: rancher
     match:
