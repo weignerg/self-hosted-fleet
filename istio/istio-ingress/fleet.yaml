@@ -3,16 +3,16 @@ defaultNamespace: istio-ingress
 helm:
   repo: https://istio-release.storage.googleapis.com/charts
   chart: gateway
-  values:
-    selector:
-        istio: ingressgateway
-    servers:
-    - port:
-        number: 443
-        name: https
-        protocol: HTTPS
-      tls:
-        mode: SIMPLE
-        credentialName: ingress-cert # This should match the Certificate secretName
-      hosts:
-      - weigner-lucky-dogs.duckdns.org # This should match a DNS name in the Certificate
+  # values:
+  #   selector:
+  #       istio: ingressgateway
+  #   servers:
+  #   - port:
+  #       number: 443
+  #       name: https
+  #       protocol: HTTPS
+  #     tls:
+  #       mode: SIMPLE
+  #       credentialName: ingress-cert # This should match the Certificate secretName
+  #     hosts:
+  #     - weigner-lucky-dogs.duckdns.org # This should match a DNS name in the Certificate
