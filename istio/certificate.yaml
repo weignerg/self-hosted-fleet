@@ -10,3 +10,7 @@ spec:
   commonName: weigner-lucky-dogs.duckdns.org
   dnsNames:
   - weigner-lucky-dogs.duckdns.org
+  issuerRef:
+    name: ca-issuer
+    kind: Issuer
+    group: cert-manager.io
